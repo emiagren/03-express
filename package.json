@@ -1,0 +1,17 @@
+{
+  "name": "03-express",
+  "version": "1.0.0",
+  "description": "Express webserver\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Db\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C with REST API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "express",
+    "rest",
+    "api"
+  ],
+  "author": "Emilie Ågren",
+  "license": "ISC"
+}
