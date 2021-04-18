@@ -4,11 +4,18 @@ const app = express()
 
 const frontend = require('./routes/frontend.js')
 const guestbook = require('./routes/guestbook.js')
+const animals = require('./routes/animals.js')
 
 const PORT = 1337
 
+// middleware läggs alltid FÖRE endpoints
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
-//hanterar resursen "web root" - request och response
+// endpoints/resurser/routes
+
+
+// hanterar resursen "web root" - request och response
 app.get('/', (req, res) => {
 	console.log('GET /');
 	res.send('Yes I am here')
@@ -21,12 +28,9 @@ app.get('/secret', (req, res) => {
 
 app.use('/frontend', frontend)
 
-app.get('/frontend', (req, res) => {
-	console.log('GET /frontend');
-	res.sendFile(__dirname + '/frontend/index.html')
-})
-
 app.use('/guestbook', guestbook)
+
+app.use('/animals', animals)
 
 // starts the server
 app.listen(PORT, () => {
